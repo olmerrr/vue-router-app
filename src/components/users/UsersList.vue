@@ -16,8 +16,8 @@ export default {
   methods: {
     confirmInput() {
       console.log('COnfirm');
-      // this.$router.push('/teams');
-      this.$router.back('/');
+      this.$router.push('/teams');
+      // this.$router.back('/');
       // this.$router.forward();
 
 
