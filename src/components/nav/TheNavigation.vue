@@ -49,10 +49,12 @@ a {
 }
 
 a:hover,
-a:active {
+a:active,
+a.router-link-active,
+a.active {
   color: #f1a80a;
   border-color: #f1a80a;
   border-radius: 5px;
-  background-color: transparent;
+  background-color: #1d0392;
 }
 </style>
