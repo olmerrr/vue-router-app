@@ -17,8 +17,10 @@ const router = createRouter({
       // {path: '/teams',component: TeamsList, alias: '/'},
       // а можнои вот так делать главную страницу
 
-      {path: '/teams',component: TeamsList},
-      {path: '/teams/:teamId',component: TeamMembers, props: true},
+      {path: '/teams',component: TeamsList, children:[
+        {path: ':teamId',component: TeamMembers, props: true},
+      ]},
+      // {path: '/teams/:teamId',component: TeamMembers, props: true},
 
       {path: '/users',component: UsersList},
       // default route
