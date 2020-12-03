@@ -9,25 +9,15 @@ import TheNotFaund from './components/nav/TheNotFaund.vue';
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-      // можно так делать главную страницу
+
       {path: '/',redirect: '/teams'},
-      // можно так делать главную страницу
-
-      // а можнои вот так делать главную страницу
-      // {path: '/teams',component: TeamsList, alias: '/'},
-      // а можнои вот так делать главную страницу
-
-      {path: '/teams',component: TeamsList, children:[
-        {path: ':teamId',component: TeamMembers, props: true},
+      { name: 'teams',
+        path: '/teams',component: TeamsList, children:[
+        { name:'team-members',
+          path: ':teamId',component: TeamMembers, props: true},
       ]},
-      // {path: '/teams/:teamId',component: TeamMembers, props: true},
-
       {path: '/users',component: UsersList},
-      // default route
-      // {path: '/:notFaund(.*)', redirect: '/teams'},
       {path: '/:notFaund(.*)', component: TheNotFaund},
-
-      // default route
 
     ],
     linkActiveClass: 'active',
